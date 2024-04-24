@@ -19,9 +19,8 @@ import requests
 LOGGER = get_logger(__name__)
 
 API_URL = "https://api.realestateapi.com/v2/AutoComplete"
-API_KEY = "AI22024TEAM12-4ff3-7675-adac-e7d0c2c3ba31" 
 
-def fetch_address_suggestions(query):
+def fetch_address_suggestions(query, API_KEY):
     # Only fetch suggestions if the query length is at least 3 characters
     if len(query) < 3:
         return []
@@ -46,6 +45,7 @@ def fetch_address_suggestions(query):
 def run():
     st.set_page_config(page_title="Team 12", page_icon="👋")
     st.write("# Team 12!")
+    API_KEY = st.secrets["API_KEY"]
 
     # Address input field
     address_input = st.text_input("Enter Property Address", key='address_input')
@@ -54,7 +54,7 @@ def run():
 
     # Dropdown to show suggestions
     if address_input and len(address_input) >= 3:
-        suggestions = fetch_address_suggestions(address_input)
+        suggestions = fetch_address_suggestions(address_input, API_KEY)
         if suggestions:
             selected_address = st.selectbox("Select an Address", suggestions)
             # Use a separate key for the selectbox to maintain its state independently
