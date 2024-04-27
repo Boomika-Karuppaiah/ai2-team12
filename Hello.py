@@ -100,6 +100,19 @@ def run():
             # Use a separate key for the selectbox to maintain its state independently
             st.session_state['selected_address'] = selected_address
 
+        purchase_price = st.text_input("Purchase Price", key='purchase_price')
+        down_payment = st.text_input("Down Payment", key='down_payment')
+        closing_costs = st.text_input("Closing Costs", key='closing_costs')
+        loan_interest_rate = st.text_input("Loan Interest Rate", key='loan_interest_rate')
+        estimated_annual_appriceiation = st.text_input("Estimated Annual Appreciation", key='estimated_annual_appriceiation')
+        annual_property_taxes = st.text_input("Annual Property Taxes", key='annual_property_taxes')
+        annual_insurance = st.text_input("Annual Insurance", key='annual_insurance')
+        management = st.text_input("Management", key='management')
+        monthly_maintenance_repair = st.text_input("Monthly Maintenance/Repair", key='monthly_maintenance_repair')
+        landscaping = st.text_input("Landscaping", key='landscaping')
+        monthly_utilities_expenses = st.text_input("Monthly Utilities Expenses", key='monthly_utilities_expenses')
+        monthly_rental_income = st.text_input("Monthly Rental Income", key='monthly_rental_income')
+
         LOGGER.info( selected_address )
 
         # Fetch HUD Rent Estimate and Render Monthly Rent Assumptions data editor
