@@ -92,8 +92,8 @@ def calculate_debt_reduction(principal, annual_rate, term_years):
     return principal_paid
 
 def run():
-    st.set_page_config(page_title="Team 12", page_icon="👋")
-    st.write("# Team 12!")
+    st.set_page_config(page_title="Multi-Family Deal Analysis", page_icon="👋")
+    st.write("# Multi-Family Deal Analysis!")
     API_KEY = st.secrets["API_KEY"]
     
     headers = None
