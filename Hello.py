@@ -165,6 +165,10 @@ def run():
             if submit_button_rent:
                 df_rent_estimate_submission["Monthly Rent Income"] = df_rent_estimate_submission["Monthly Rent"] * df_rent_estimate_submission["Unit Count"]
                 total_monthly_rent = df_rent_estimate_submission["Monthly Rent Income"].sum()
+                st.write("Monthly Rent Income: ", total_monthly_rent)
+
+            analyze_property = st.form_submit_button("Analyze Property")
+            if analyze_property:
 
                 st.subheader("Investment Property Analysis")
                 st.write("Purchase Price: ",round(float(purchase_price),2))
